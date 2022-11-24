@@ -9,12 +9,19 @@ import { nanoid } from "nanoid";
 export default {
   name: "MyHead",
   props: ["addStre"],
+  data() {
+    return {
+      title: "",
+    };
+  },
   methods: {
     addVuale(e) {
+      //包装成对象
+      if (!e.target.value.trim()) return alert("输入不能为空");
       const todoObj = {
         uuid: nanoid(),
         title: e.target.value,
-        start: false,
+        dpme: false,
       };
       this.addStre(todoObj);
       e.target.value = "";

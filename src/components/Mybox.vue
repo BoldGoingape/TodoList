@@ -2,8 +2,16 @@
   <div class="hello">
     <h3>今日任务</h3>
     <MyHeare :addStre="addStre"></MyHeare>
-    <myliset :todos="todos"></myliset>
-    <MyFoot></MyFoot>
+    <myliset
+      :todos="todos"
+      :checkTodo="checkTodo"
+      :deleteTodo="deleteTodo"
+    ></myliset>
+    <MyFoot
+      :todos="todos"
+      :checkAllTodo="checkAllTodo"
+      :DeletSelectTod="DeletSelectTod"
+    ></MyFoot>
   </div>
 </template>
 
@@ -13,23 +21,30 @@ import MyFoot from "./Myfoot.vue";
 import Myliset from "./MyList.vue";
 export default {
   name: "MyBox",
-  props: ["todos", "addStre"],
+  props: [
+    "todos",
+    "addStre",
+    "checkTodo",
+    "deleteTodo",
+    "checkAllTodo",
+    "DeletSelectTod",
+  ],
   components: {
     MyHeare,
     Myliset,
     MyFoot,
   },
+
   methods: {
     // eslint-disable-next-line vue/no-dupe-keys
-    addStre(todoObj) {
-      console.log(this.todo);
-      console.log(todoObj);
-      //   this.todos.unshift(todoObj);
-    },
+    // addStre(todoObj) {
+    //   console.log(this.todo);
+    //   console.log(todoObj);
+    //   //   this.todos.unshift(todoObj);
+    // },
   },
 };
 </script>
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .hello {
   margin: 40px auto;

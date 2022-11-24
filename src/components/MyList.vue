@@ -21,6 +21,9 @@ export default {
   components: {
     Myitem,
   },
+  data() {
+    return {};
+  },
   methods: {},
 };
 </script>

@@ -2,7 +2,7 @@
   <li>
     <input
       type="checkbox"
-      :checked="todos.start"
+      :checked="todos.dpme"
       @change="handCheck(todos.uuid)"
     />
     <span>{{ todos.title }}</span>
@@ -17,7 +17,6 @@ export default {
   components: {},
   methods: {
     handCheck(id) {
-      console.log(id);
       this.checkTodo(id);
     },
     deletItem(id) {
