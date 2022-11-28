@@ -34,6 +34,12 @@ export default {
     addStre(todoObj) {
       this.todos.unshift(todoObj);
     },
+    //改
+    updateTodo(id, title) {
+      this.todos.forEach((todo) => {
+        if (todo.uuid == id) todo.title = title;
+      });
+    },
     //选项
     checkTodo(id) {
       this.todos.forEach((todo) => {
@@ -67,6 +73,9 @@ export default {
         localStorage.setItem("todos", JSON.stringify(value));
       },
     },
+  },
+  mounted() {
+    this.$bus.$on("updateTodo", this.updateTodo);
   },
 };
 </script>
